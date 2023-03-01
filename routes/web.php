@@ -1,6 +1,9 @@
 <?php
 
 use App\Http\Controllers\DemoController;
+use App\Http\Controllers\signUpController;
+use App\Http\Controllers\signInController;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,3 +18,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [DemoController::class, 'show'])->name('demo.show');
+Route::get('/signin', [signInController::class, 'getSignIn'])->name('sign.in');
+Route::post('/signin', [signInController::class, 'postSignIn']);
+
+
+Route::get('/signup', [signUpController::class, 'getSignUp'])->name('sign.up');
+Route::post('/signup', [signUpController::class, 'postSignUp']);
